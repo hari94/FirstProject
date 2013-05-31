@@ -38,13 +38,12 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		if (arg0.getId() == R.id.button1) {
 			s = et.getText().toString();
-			char[] chars = s.toCharArray();
 			int len = s.length() - 1;
 			char[] ca = s.toCharArray();
 			StringBuilder sb = new StringBuilder();
 			Random random = new Random();
 			for (int i = 0; i <= len; i++) {
-				char c = chars[random.nextInt(ca.length)]; // to generate a random character from the entered string.
+				char c = ca[random.nextInt(ca.length)]; // to generate a random character from the entered string.
 				sb.append(c);
 			}
 			String output = sb.toString();
