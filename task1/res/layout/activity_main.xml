@@ -12,6 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="17dp"
+        android:textSize="25dp"
+        android:textColor="#00008B"
         android:text="Enter ur text here :" />
 
     <EditText
@@ -39,9 +41,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="80dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

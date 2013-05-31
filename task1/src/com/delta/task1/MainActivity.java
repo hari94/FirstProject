@@ -1,7 +1,6 @@
 package com.delta.task1;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,41 +12,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
-Button b;
-EditText et;
-TextView tv;
-String s1,s2=" ";
-int x,len;
-//char[] a;
-//char s;
-ArrayList<Character> a=new ArrayList<Character>();
+	Button b;
+	EditText et;
+	TextView tv;
+	String s;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		b=(Button)findViewById(R.id.button1);
-		et=(EditText)findViewById(R.id.editText1);
-		tv=(TextView)findViewById(R.id.textView2);
-		s1=et.getText().toString();
-		len=s1.length();
-		/*char[] arr=s1.toCharArray();
-	
-		
-		
-		for(int i=0;i<len;i++){
-			//x=(int) (Math.random()%len);
-			a[i]=arr[len-i];
-						
-			
-		}*/
+		b = (Button) findViewById(R.id.button1);
+		et = (EditText) findViewById(R.id.editText1);
+		tv = (TextView) findViewById(R.id.textView2);
+
 		b.setOnClickListener(this);
-		
+
 	}
-
-	
-
-
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,14 +36,22 @@ ArrayList<Character> a=new ArrayList<Character>();
 		return true;
 	}
 
-
-
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		if(arg0.getId()==R.id.button1){
-		
-		tv.setText(s1);
+		if (arg0.getId() == R.id.button1) {
+			s = et.getText().toString();
+			char[] chars = s.toCharArray();
+			int len = s.length() - 1;
+			char[] ca = s.toCharArray();
+			StringBuilder sb = new StringBuilder();
+			Random random = new Random();
+			for (int i = 0; i <= len; i++) {
+				char c = chars[random.nextInt(ca.length)];   //to generate a random character from the entered string. 
+				sb.append(c);
+			}
+			String output = sb.toString();
+			tv.setText(output);
 		}
 	}
 
