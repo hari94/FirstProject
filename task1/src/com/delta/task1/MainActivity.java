@@ -17,28 +17,25 @@ public class MainActivity extends Activity implements OnClickListener {
 	TextView tv;
 	String s;
 
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		b = (Button) findViewById(R.id.button1);
 		et = (EditText) findViewById(R.id.editText1);
 		tv = (TextView) findViewById(R.id.textView2);
-
 		b.setOnClickListener(this);
 
 	}
 
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
 
-	@Override
+	// The Button Click Listener
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
+
 		if (arg0.getId() == R.id.button1) {
 			s = et.getText().toString();
 			char[] chars = s.toCharArray();
@@ -47,7 +44,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			StringBuilder sb = new StringBuilder();
 			Random random = new Random();
 			for (int i = 0; i <= len; i++) {
-				char c = chars[random.nextInt(ca.length)];   //to generate a random character from the entered string. 
+				char c = chars[random.nextInt(ca.length)]; // to generate a random character from the entered string.
 				sb.append(c);
 			}
 			String output = sb.toString();
